@@ -1,24 +1,97 @@
 <!DOCTYPE html>
 <html>
-<title>Coming Soon</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<style>
-body,h1 {font-family: "Raleway", sans-serif}
-body, html {height: 100%}
-.bgimg {
-  background-image: url('img/sp_text_logo_purple.jpg');
-  min-height: 100%;
-  background-position: center;
-  background-size: cover;
-}
-</style>
+
+<title>Welcome to Squishy Productions!</title>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" rel="stylesheet" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+   
+  <link rel="stylesheet" href="css/sp.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/menu.js"></script>
+</head>
+
 <body>
 
-<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-</div>
+  <div class="grid-container">
+    <div class="menu-icon">
+      <i class="fas fa-bars header__menu"></i>
+    </div>
+
+    <aside class="sidenav">
+      <div class="sidenav__close-icon">
+        <i class="fas fa-times sidenav__brand-close"></i>
+      </div>
+      <img src="img/sp/sp_logo_sidenav.jpg" alt=""/>
+      <ul class="sidenav__list">
+        <li class="sidenav__list-item">Home</li>
+        <li class="sidenav__list-item">About</li>
+        <li class="sidenav__list-item">Contact</li>
+      </ul>
+    </aside>
+
+    <header class="header">
+<!--  <div class="header__search">Search...</div>
+      <div class="header__avatar">Your face</div> -->
+    </header>
+
+    <main class="main">
+      <div class="main-info">
+        <h2>Welcome to Squishy Productions!</h2>
+        <p>Feel free to look around & please do not hesitate to reach out to us for your next project.</p>
+        <p>We would love to welcome you to the Squishy Family!</p>
+      </div>
+
+      <div class="main-header">
+        <br>
+        <h2>Our Content</h2>
+      </div>
+      <div class="main-productions">
+        <div class="productioncard">
+          <video controls width="100%" height="100%"src="content/mothers_day_lg.MOV">
+            Sorry, your browser doesn't support embedded videos.
+          </video>
+        </div>
+        <div class="productioncard">
+          <video controls width="100%" height="100%"src="content/mothers_day_cj.MOV">
+            Sorry, your browser doesn't support embedded videos.
+          </video>
+        </div>
+        <div class="productioncard">
+          <video controls width="100%" height="100%"src="content/birthday_amj.MOV">
+            Sorry, your browser doesn't support embedded videos.
+          </video>
+        </div>
+      </div>
+
+      <div class="main-header">
+        <br>
+        <h2>Our Corporate Sponsors</h2>
+      </div>
+      <div class="main-sponsors">
+        <div class="sponsorcard">
+          <div class="sponsorcard__logo"><img src="img/sponsors/jcc_logo.jpg" alt=""/></div>
+        </div>
+        <div class="sponsorcard">
+          <div class="sponsorcard__logo"><img src="img/sponsors/qot_logo.jpg" alt=""/></div>
+        </div>
+        <div class="sponsorcard">
+          <div class="sponsorcard__logo"><img src="img/sponsors/jj_logo.jpg" alt=""/></div>
+        </div>
+        <div class="sponsorcard">
+          <div class="sponsorcard__logo"><img src="img/sponsors/tdm_logo.jpg" alt=""/></div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__copyright">&copy; 2020 DAJ</div>
+      <div class="footer__signature">Made with love by dajerome</div>
+    </footer>
+  </div>
 
 </body>
 </html>
