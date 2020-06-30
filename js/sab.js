@@ -240,17 +240,19 @@ class StocksAndBondsGame extends React.Component {
                     <tr>
                       <th>Company</th><th>Week 1</th><th>Week 2</th><th>Week 3</th><th>Week 4</th><th>Week 5</th><th>Week 6</th><th>Week 7</th><th>Week 8</th><th>Week 9</th><th>Week 10</th>
                     </tr>
-                      <td className="boldElement">"C City Bonds"<br/>"Yield 5%"</td>
-                      <td>"PAR"</td>
-                      <td>"PAR"</td>
-                      <td>"PAR"</td>
-                      <td>"PAR"</td>
-                      <td>"PAR"</td>
-                      <td>"PAR"</td>
-                      <td>"PAR"</td>
-                      <td>"PAR"</td>
-                      <td>"PAR"</td>
-                      <td>"PAR"</td>
+                    <tr>
+                      <td className="boldElement">C City Bonds<br/>Yield 5%</td>
+                      <td>PAR</td>
+                      <td>PAR</td>
+                      <td>PAR</td>
+                      <td>PAR</td>
+                      <td>PAR</td>
+                      <td>PAR</td>
+                      <td>PAR</td>
+                      <td>PAR</td>
+                      <td>PAR</td>
+                      <td>PAR</td>
+                    </tr>
                     {historicalPrices}
                   </tbody>
                 </table>
