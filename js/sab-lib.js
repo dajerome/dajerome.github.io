@@ -39,11 +39,12 @@ const marketCards = [
     message: "Company moves to a new excellent location.",
     changes: {"Tri City Tran": 5}
   },
-  {
-    market: "Bear",
-    message: "Extra year-end dividend of $2 per share declared by the Board of Directors. (Each stockholder receives $2 per share.)",
-    changes: {"Growth Corp": 10}
-  },
+// can not handle the $2 per share
+//  {
+//    market: "Bear",
+//    message: "Extra year-end dividend of $2 per share declared by the Board of Directors. (Each stockholder receives $2 per share.)",
+//    changes: {"Growth Corp": 10}
+//  },
   {
     market: "Bull",
     message: "United Auto announces new advanced-design auto entry in the mini-car field.",
@@ -237,8 +238,18 @@ const companies = [
   {index: 5, shortName: "Tri City Tran", fullName: "Tri-City Transport Company", companyYield: "No Yield"},
   {index: 6, shortName: "United Auto", fullName: "United Auto Company", companyYield: "Yield 2%"},
   {index: 7, shortName: "Uranium Ent", fullName: "Uranium Enterprises, Inc.", companyYield: "Yield 6%"},
-  {index: 8, shortName: "Valley Power", fullName: "Valley Power & Light Company", companyYield: "Yield 3%"}
+  {index: 8, shortName: "Valley Power", fullName: "Valley Power & Light Company", companyYield: "Yield 3%"},
+  {index: 9, shortName: "C City Bonds", fullName: "Central City Municipal Bonds", companyYield: "Yield 5%"}
 ];
+
+const companyYield = {
+  "Growth Corp": 1,
+  "Pioneer Mult": 4,
+  "Shady Brooks": 7,
+  "United Auto": 2,
+  "Uranium Ent": 6,
+  "Valley Power": 3
+};
 
 class StocksAndBondsLib {
   constructor () { }
@@ -276,5 +287,18 @@ class StocksAndBondsLib {
       }
     }
     return {changeStyle: changeStyle, changeSymbol: changeSymbol};
+  }
+
+  // ========================================
+  getDividend = (company) => {
+    if (company.includes("C City Bonds")) {
+      return .05;
+    }
+    else if (companyYield.hasOwnProperty(company)) {
+      return companyYield[company];
+    }
+    else {
+      return 0;
+    }
   }
 }   
