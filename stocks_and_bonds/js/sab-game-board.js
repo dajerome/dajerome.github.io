@@ -180,7 +180,7 @@ class StocksAndBondsGameBoard extends React.Component {
     const url = "http://www.squishyproductions.com/";
     const dataToFetch = ["companies", "marketCards", "marketCalculator"];
     for (let i = 0; i < dataToFetch.length; i++){
-      const data = await lib.getData("http://localhost:8000/" + "stocks_and_bonds/data/" + dataToFetch[i] + ".json");
+      const data = await lib.getData(url + "stocks_and_bonds/data/" + dataToFetch[i] + ".json");
       setup[dataToFetch[i]] = data;
     }
     this.setState({setup});
