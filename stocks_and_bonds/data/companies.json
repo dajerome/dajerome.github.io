@@ -1,0 +1,68 @@
+{
+  "Growth Corp": {
+    "marketCalculatorIndex": 0,
+    "fullName": "Growth Corporation of America",
+    "yield": 1,
+    "priced": true,
+    "description": "A well established company with a phenomenal growth record. It is an expanding industry, spends a lot of money on research and is expected to continue its growth pattern. The Company's policy of reinvesting earnings causes low yield. The price-to-earnings ratio of this stock is extremely high."
+  },
+  "Metro Prop": {
+    "marketCalculatorIndex": 1,
+    "fullName": "Metro Properties, Inc.",
+    "priced": true,
+    "description": "An investment representing good prospects of high appreciation. No dividends are expected in the immediate future. However, the City's proposed Urban Renewal Program could have great effect on earnings."
+  },
+  "Pioneer Mult": {
+    "marketCalculatorIndex": 2,
+    "fullName": "Pioneer Mutual Fund",
+    "yield": 4,
+    "priced": true,
+    "description": "A common stock income mutual fund offered by a large mutual fund company. It has a good yield of 4%. Stock in this fund represents a good, steady income, but only a fair appreciation investment."
+  },
+  "Shady Brooks": {
+    "marketCalculatorIndex": 3,
+    "fullName": "Shady Brooks Development",
+    "yield": 7,
+    "priced": true,
+    "description": "A real estate investment representing extremely high income, but steadily drepreciating capital assets."
+  },
+  "Stryker Drlg": {
+    "marketCalculatorIndex": 4,
+    "fullName": "Stryker Drilling Company",
+    "priced": true,
+    "description": "A stock representing extremely speculative investment. Profits go toward drilling new oil wells, so no dividends are expected. This stock could be worth rags or riches."
+  },
+  "Tri City Tran": {
+    "marketCalculatorIndex": 5,
+    "fullName": "Tri-City Transport Company",
+    "priced": true,
+    "description": "A stock representing a high appreciation investment prospect with a good stable outlook depending on the administrative ability and ambition of its respected, ethical and energetic young president. As all profits go back into the Company, dividends are not expected to be declared in the forseeable future."
+  },
+  "United Auto": {
+    "marketCalculatorIndex": 6,
+    "fullName": "United Auto Company",
+    "yield": 2,
+    "priced": true,
+    "description": "A medium large company in the large, oligopolistic automobile industry. United Auto, like others in the industry, is subject to whims of public fancy. Stock in this company represents a somewhat speculative investment with a good growth pattern. Because it is popular with the investing public, it has a fairly high price-to-earnings ratio and low yield."
+  },
+  "Uranium Ent": {
+    "marketCalculatorIndex": 7,
+    "fullName": "Uranium Enterprises, Inc.",
+    "yield": 6,
+    "priced": true,
+    "description": "A highly speculative, high income stock ideal for the short or medium term investor. Its long term prospects are fair to poor."
+  },
+  "Valley Power": {
+    "marketCalculatorIndex": 8,
+    "fullName": "Valley Power & Light Company",
+    "yield": 3,
+    "priced": true,
+    "description": "A stable, steadily growing public utility company located in a well established, healthy industrial area. Stock in this company represents a safe, medium yield, medium growth investment."
+  },
+  "C City Bonds": {
+    "fullName": "Central City Municipal Bonds",
+    "yield": 5,
+    "priced": false,
+    "description": "An AAA bond with a good yield. This investment represents extreme security and good income, but, of course, no appreciation."
+  }
+}
