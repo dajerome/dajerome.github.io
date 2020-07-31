@@ -176,7 +176,8 @@ class StocksAndBondsGameBoard extends React.Component {
   async setup() {
     const setup = JSON.parse(JSON.stringify(this.state.setup));
 
-    const url = "http://localhost:8000/";
+    //const url = "http://localhost:8000/";
+    const url = "http://www.squishyproductions.com/";
     const dataToFetch = ["companies", "marketCards", "marketCalculator"];
     for (let i = 0; i < dataToFetch.length; i++){
       const data = await lib.getData("http://localhost:8000/" + "stocks_and_bonds/data/" + dataToFetch[i] + ".json");
