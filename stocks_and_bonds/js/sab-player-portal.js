@@ -235,7 +235,7 @@ class StocksAndBondsPlayerPortal extends React.Component {
     const order = JSON.parse(JSON.stringify(this.state.order));
     const trades = order.trades.slice();
 
-    if ((order.sellTotal - order.buyTotal + portfolio.Cash.quantity) >= 0) {
+    if ((order.sellTotal - order.buyTotal + portfolio.Cash.quantity) < 0) {
       order.message = "Invalid order. Order value is greater than available cash balance. Fix and resubmit.";
       this.setState({order});
       return;
