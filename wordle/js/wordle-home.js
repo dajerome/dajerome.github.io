@@ -134,7 +134,7 @@ class WordleHome extends React.Component {
     const setup = JSON.parse(JSON.stringify(this.state.setup));
 
     //const url = "http://127.0.0.1:3000/";
-    const url = "http://www.squishyproductions.com/";
+    const url = "https://www.squishyproductions.com/";
     const dataToFetch = ["scores"];
     for (let i = 0; i < dataToFetch.length; i++){
       const data = await lib.getData(url + "wordle/data/" + dataToFetch[i] + ".json");
