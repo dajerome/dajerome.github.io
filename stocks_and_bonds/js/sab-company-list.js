@@ -26,7 +26,7 @@ class StocksAndBondsCompanyList extends React.Component {
     const setup = JSON.parse(JSON.stringify(this.state.setup));
 
     //const url = "http://localhost:8000/";
-    const url = "http://www.squishyproductions.com/";
+    const url = "https://www.squishyproductions.com/";
     const dataToFetch = ["companies"];
     for (let i = 0; i < dataToFetch.length; i++){
       const data = await lib.getData(url + "stocks_and_bonds/data/" + dataToFetch[i] + ".json");
