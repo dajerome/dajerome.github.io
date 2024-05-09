@@ -1,0 +1,31 @@
+body {
+  font: 14px Verdana;
+  margin: 20px;
+}
+
+/* 
+ * ------------------------------------------------------------
+ * Tables
+ * ------------------------------------------------------------
+ */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 110%;
+}
+
+th, td {
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: rgb(14, 175, 140);
+  color: white;
+}
+
+.boldElement {
+  font-weight: bold;
+}

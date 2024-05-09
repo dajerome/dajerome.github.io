@@ -1,0 +1,116 @@
+[
+    {
+        "abby":  [-5],
+        "david": [-2],
+        "mark":  [-3],
+        "sarah": [1]
+    },
+    {
+        "abby":  [-4],
+        "david": [7],
+        "mark":  [-1],
+        "sarah": [2]
+    },
+    {
+        "abby":  [-8],
+        "david": [2],
+        "mark":  [-1],
+        "sarah": [-4]
+    },
+    {
+        "abby":  [0],
+        "david": [0],
+        "mark":  [3],
+        "sarah": [2]
+    },
+    {
+        "abby":  [3],
+        "david": [0],
+        "mark":  [2],
+        "sarah": [6]
+    },
+    {
+        "abby":  [1],
+        "david": [3],
+        "mark":  [6],
+        "sarah": [1]
+    },
+    {
+        "abby":  [0],
+        "david": [0],
+        "mark":  [2],
+        "sarah": [5]
+    },
+    {
+        "abby":  [1],
+        "david": [2],
+        "mark":  [4],
+        "sarah": [0]
+    },
+    {
+        "abby":  [0],
+        "david": [-5],
+        "mark":  [-4],
+        "sarah": [7]
+    },
+    {
+        "abby":  [-2],
+        "david": [-6],
+        "mark":  [1],
+        "sarah": [-1]
+    },
+    {
+        "abby":  [3],
+        "david": [-1],
+        "mark":  [-1],
+        "sarah": [-1]
+    },
+    {
+        "abby":  [-2],
+        "david": [4],
+        "mark":  [0],
+        "sarah": [0]
+    },
+    {
+        "abby":  [-2],
+        "david": [2],
+        "mark":  [-5],
+        "sarah": [3]
+    },
+    {
+        "abby":  [-2],
+        "david": [4],
+        "mark":  [2],
+        "sarah": [0]
+    },
+    {
+        "abby":  [-1],
+        "david": [-2],
+        "mark":  [-3],
+        "sarah": [1]
+    },
+    {
+        "abby":  [-3],
+        "david": [-1],
+        "mark":  [2],
+        "sarah": [2]
+    },
+    {
+        "abby":  [-2],
+        "david": [0],
+        "mark":  [2],
+        "sarah": [4]
+    },
+    {
+        "abby":  [-2],
+        "david": [-2],
+        "mark":  [-1],
+        "sarah": [-4]
+    },
+    {
+        "abby":  [6, 4, 4, 4],
+        "david": [3, 3, 3, 6],
+        "mark":  [6, 4, 4, 6],
+        "sarah": [3, 5, 3, 6]
+    }
+]
