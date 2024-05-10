@@ -3,14 +3,13 @@ const lib = new WordleLib();
 // ========================================
 
 function WordleWeeklyLeaderboard(props) {
-  const latestWeekIndex = props.scores.length - 1;
-  const latestWeek = props.scores[latestWeekIndex];
-  const sortedScores = lib.getWeeklyScores(latestWeek);
+  const latestWeekIndex = props.scoreData.weeklyScores.length - 1;
+  const latestWeek = props.scoreData.weeklyScores[latestWeekIndex];
 
-  const weeklyScores = [];
-  for (let player in sortedScores) {
-    const playerScore = sortedScores[player];
-    weeklyScores.push((
+  const weeklyScore = [];
+  for (let player in latestWeek) {
+    const playerScore = latestWeek[player];
+    weeklyScore.push((
       <tr key={player}>
         <td>{player}</td>
         <td>{playerScore}</td>
@@ -26,7 +25,7 @@ function WordleWeeklyLeaderboard(props) {
           <tr>
             <th style={{width: "60%"}}>Player</th><th style={{width: "40%"}}>Score</th>
           </tr>
-          {weeklyScores}
+          {weeklyScore}
         </tbody>
       </table>
     </div>
@@ -36,38 +35,9 @@ function WordleWeeklyLeaderboard(props) {
 // ========================================
 
 function WordleSeasonStandings(props) {
-  const wins = {};
-  for (let week in props.scores.slice(0,-1)) {
-    const sortedScores = lib.getWeeklyScores(props.scores[week]);
-
-    let lowScore = 50;
-    for (let k in sortedScores) {
-      if (sortedScores[k] <= lowScore) {
-        lowScore = sortedScores[k];
-      }
-    }
-
-    let numberOfWinners = 0.0;
-    for (let k in sortedScores) {
-      if (sortedScores[k] == lowScore) {
-        numberOfWinners++;
-      }
-    }
-
-    for (let k in sortedScores) {
-      if (sortedScores[k] == lowScore) {
-        if (!(k in wins)) {
-          wins[k] = 0.0;
-        }
-        wins[k] = wins[k] + 1.0/numberOfWinners;
-      }
-    }
-  }
-  const sortedWins = lib.sortScores(wins, "desc");
-
   const seasonWins = [];
-  for (let player in sortedWins) {
-    const playerWins = sortedWins[player];
+  for (let player in props.scoreData.seasonStandings) {
+    const playerWins = props.scoreData.seasonStandings[player];
     seasonWins.push((
       <tr key={player}>
         <td>{player}</td>
@@ -93,15 +63,62 @@ function WordleSeasonStandings(props) {
 
 // ========================================
 
-function WordleHistoricalStats(props) {
+function WordleSeasonStats(props) {
+  const lowestWeeklyScoreEver = props.scoreData.seasonStats.lowestWeeklyScoreEver;
+  const lowest = (
+    <tr key={lowestWeeklyScoreEver.player}>
+      <td>{lowestWeeklyScoreEver.player}</td>
+      <td>{lowestWeeklyScoreEver.score}</td>
+      <td>{lowestWeeklyScoreEver.week}</td>
+    </tr>
+  )
+
+  const highestWeeklyScoreEver = props.scoreData.seasonStats.highestWeeklyScoreEver;
+  const highest = (
+    <tr key={highestWeeklyScoreEver.player}>
+      <td>{highestWeeklyScoreEver.player}</td>
+      <td>{highestWeeklyScoreEver.score}</td>
+      <td>{highestWeeklyScoreEver.week}</td>
+    </tr>
+  )
+
+  const averageScores = [];
+  for (let player in props.scoreData.seasonStats.averageWeeklyScores) {
+    const playerScore = props.scoreData.seasonStats.averageWeeklyScores[player];
+    averageScores.push((
+      <tr key={player}>
+        <td>{player}</td>
+        <td colSpan={2}>{playerScore.toFixed(3)}</td>
+      </tr>
+    ));
+  }
+
   return (
     <div style={{textAlign: "center"}}>
-      <h2>Historical Stats</h2>
+      <h2>Season Stats</h2>
       <table style={{width: "100%"}}>
         <tbody>
           <tr>
-            <th style={{width: "60%"}}>Coming Soon!</th>
+            <th colSpan={3} style={{width: "100%"}}>Lowest Weekly Score</th>
           </tr>
+          <tr>
+            <th style={{width: "60%"}}>Player</th><th style={{width: "20%"}}>Score</th><th style={{width: "20%"}}>Week</th>
+          </tr>
+          {lowest}
+          <tr>
+            <th colSpan={3} style={{width: "100%"}}>Highest Weekly Score</th>
+          </tr>
+          <tr>
+            <th style={{width: "60%"}}>Player</th><th style={{width: "20%"}}>Score</th><th style={{width: "20%"}}>Week</th>
+          </tr>
+          {highest}
+          <tr>
+            <th colSpan={3} style={{width: "100%"}}>Average Weekly Scores</th>
+          </tr>
+          <tr>
+            <th style={{width: "60%"}}>Player</th><th colSpan={2} style={{width: "40%"}}>Score</th>
+          </tr>
+          {averageScores}
         </tbody>
       </table>
     </div>
@@ -115,7 +132,8 @@ class WordleHome extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      setup: {}
+      setup: {},
+      scoreData: {}
     };
   }
 
@@ -141,28 +159,40 @@ class WordleHome extends React.Component {
       setup[dataToFetch[i]] = data;
     }
     this.setState({setup});
+    lib.init(setup);
+
+    const scoreData = JSON.parse(JSON.stringify(this.state.scoreData));
+    scoreData.weeklyScores = lib.getWeeklyScores()
+    scoreData.seasonStandings = lib.getSeasonStandings();
+    scoreData.seasonStats = lib.getSeasonStats();
+    this.setState({scoreData});
   }
 
 // ========================================
 
   render() {
-    if (this.state.setup.scores) {
+    if (
+      this.state.setup.scores
+      && this.state.scoreData.weeklyScores 
+      && this.state.scoreData.seasonStandings
+      && this.state.scoreData.seasonStats
+    ) {
 
       return (
         <div className="grid-container">
           <main className="main">
 
-            <WordleWeeklyLeaderboard scores={this.state.setup.scores} />
+            <WordleWeeklyLeaderboard scoreData={this.state.scoreData} />
 
             <br/>
             <br/>
 
-            <WordleSeasonStandings scores={this.state.setup.scores} />
+            <WordleSeasonStandings scoreData={this.state.scoreData} />
 
             <br/>
             <br/>
 
-            <WordleHistoricalStats state={this.state} />
+            <WordleSeasonStats scoreData={this.state.scoreData} />
 
           </main>
         </div>
