@@ -1,111 +1,111 @@
 [
     {
-        "abby":  [-5],
-        "david": [-2],
-        "mark":  [-3],
-        "sarah": [1]
-    },
-    {
-        "abby":  [-4],
-        "david": [7],
-        "mark":  [-1],
-        "sarah": [2]
-    },
-    {
-        "abby":  [-8],
+        "abby":  [-1],
         "david": [2],
-        "mark":  [-1],
-        "sarah": [-4]
+        "mark":  [1],
+        "sarah": [5]
     },
     {
         "abby":  [0],
-        "david": [0],
+        "david": [11],
         "mark":  [3],
-        "sarah": [2]
+        "sarah": [6]
+    },
+    {
+        "abby":  [-4],
+        "david": [6],
+        "mark":  [3],
+        "sarah": [0]
+    },
+    {
+        "abby":  [4],
+        "david": [4],
+        "mark":  [7],
+        "sarah": [6]
+    },
+    {
+        "abby":  [7],
+        "david": [4],
+        "mark":  [6],
+        "sarah": [10]
+    },
+    {
+        "abby":  [5],
+        "david": [7],
+        "mark":  [10],
+        "sarah": [5]
+    },
+    {
+        "abby":  [4],
+        "david": [4],
+        "mark":  [6],
+        "sarah": [9]
+    },
+    {
+        "abby":  [5],
+        "david": [6],
+        "mark":  [8],
+        "sarah": [4]
+    },
+    {
+        "abby":  [4],
+        "david": [-1],
+        "mark":  [0],
+        "sarah": [11]
+    },
+    {
+        "abby":  [2],
+        "david": [-2],
+        "mark":  [5],
+        "sarah": [3]
+    },
+    {
+        "abby":  [7],
+        "david": [3],
+        "mark":  [3],
+        "sarah": [3]
+    },
+    {
+        "abby":  [2],
+        "david": [8],
+        "mark":  [4],
+        "sarah": [4]
+    },
+    {
+        "abby":  [2],
+        "david": [6],
+        "mark":  [-1],
+        "sarah": [7]
+    },
+    {
+        "abby":  [2],
+        "david": [8],
+        "mark":  [6],
+        "sarah": [4]
     },
     {
         "abby":  [3],
-        "david": [0],
-        "mark":  [2],
-        "sarah": [6]
+        "david": [2],
+        "mark":  [1],
+        "sarah": [5]
     },
     {
         "abby":  [1],
         "david": [3],
         "mark":  [6],
-        "sarah": [1]
+        "sarah": [6]
     },
     {
-        "abby":  [0],
-        "david": [0],
-        "mark":  [2],
-        "sarah": [5]
-    },
-    {
-        "abby":  [1],
-        "david": [2],
-        "mark":  [4],
-        "sarah": [0]
-    },
-    {
-        "abby":  [0],
-        "david": [-5],
-        "mark":  [-4],
-        "sarah": [7]
-    },
-    {
-        "abby":  [-2],
-        "david": [-6],
-        "mark":  [1],
-        "sarah": [-1]
-    },
-    {
-        "abby":  [3],
-        "david": [-1],
-        "mark":  [-1],
-        "sarah": [-1]
-    },
-    {
-        "abby":  [-2],
+        "abby":  [2],
         "david": [4],
-        "mark":  [0],
-        "sarah": [0]
+        "mark":  [6],
+        "sarah": [8]
     },
     {
-        "abby":  [-2],
+        "abby":  [2],
         "david": [2],
-        "mark":  [-5],
-        "sarah": [3]
-    },
-    {
-        "abby":  [-2],
-        "david": [4],
-        "mark":  [2],
+        "mark":  [3],
         "sarah": [0]
-    },
-    {
-        "abby":  [-1],
-        "david": [-2],
-        "mark":  [-3],
-        "sarah": [1]
-    },
-    {
-        "abby":  [-3],
-        "david": [-1],
-        "mark":  [2],
-        "sarah": [2]
-    },
-    {
-        "abby":  [-2],
-        "david": [0],
-        "mark":  [2],
-        "sarah": [4]
-    },
-    {
-        "abby":  [-2],
-        "david": [-2],
-        "mark":  [-1],
-        "sarah": [-4]
     },
     {
         "abby":  [6, 4, 4, 4, 4],
