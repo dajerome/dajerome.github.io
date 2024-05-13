@@ -151,7 +151,10 @@ class WordleHome extends React.Component {
   async setup() {
     const setup = JSON.parse(JSON.stringify(this.state.setup));
 
-    const url = "https://www.googleapis.com/drive/v3/files/1hcmJXL-0eNOekdpFt6eOzuMqwQruYmgL?key=AIzaSyB2I5GACS31M__45rf7CItgkYrmn_ulOYQ&alt=media"
+    const fileId = "1GL_-ntGRIufPcxBpIPxUiRySWAbKVal1lhfBmu3NqwM"
+    const apiKey = "AIzaSyB2I5GACS31M__45rf7CItgkYrmn_ulOYQ"
+    const mimeType = "text/plain"
+    const url = "https://www.googleapis.com/drive/v3/files/"+fileId+"/export?key="+apiKey+"&mimeType="+mimeType
     const data = await lib.getData(url);
     setup.scores = data;
     this.setState({setup});
