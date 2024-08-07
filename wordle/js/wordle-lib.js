@@ -41,7 +41,10 @@ class WordleLib {
     let averageWeeklyScores = {};
     const wins = {};
 
-    for (let i in this.weeklyScores.slice(0,-1)) {
+    for (let i in this.weeklyScores) {
+      if (i == 0) {
+        continue;
+      }
       let week = this.weeklyScores[i];
   
       let lowScore = 50;
@@ -51,7 +54,7 @@ class WordleLib {
           lowestWeeklyScoreEver = {
             player: player,
             score: week[player],
-            week: parseInt(i) + 1
+            week: this.weeklyScores.length - parseInt(i)
           };
         }
         else {
@@ -59,7 +62,7 @@ class WordleLib {
             lowestWeeklyScoreEver = {
               player: player,
               score: week[player],
-              week: parseInt(i) + 1
+              week: this.weeklyScores.length - parseInt(i)
             };
           }
         }
@@ -69,7 +72,7 @@ class WordleLib {
           highestWeeklyScoreEver = {
             player: player,
             score: week[player],
-            week: parseInt(i) + 1
+            week: this.weeklyScores.length - parseInt(i)
           };
         }
         else {
@@ -77,7 +80,7 @@ class WordleLib {
             highestWeeklyScoreEver = {
               player: player,
               score: week[player],
-              week: parseInt(i) + 1
+              week: this.weeklyScores.length - parseInt(i)
             };
           }
         }

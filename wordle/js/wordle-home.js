@@ -3,7 +3,7 @@ const lib = new WordleLib();
 // ========================================
 
 function WordleWeeklyLeaderboard(props) {
-  const latestWeekIndex = props.scoreData.weeklyScores.length - 1;
+  const latestWeekIndex = 0;
   const latestWeek = props.scoreData.weeklyScores[latestWeekIndex];
 
   const weeklyScore = [];
@@ -19,7 +19,7 @@ function WordleWeeklyLeaderboard(props) {
 
   return (
     <div style={{textAlign: "center"}}>
-      <h2>Week {latestWeekIndex+1} Leaderboard</h2>
+      <h2>Week {props.scoreData.weeklyScores.length} Leaderboard</h2>
       <table style={{width: "100%"}}>
         <tbody>
           <tr>
