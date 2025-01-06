@@ -1,8 +1,11 @@
+const year = 2025;
 const lib = new WordleLib();
 
 // ========================================
 
 function WordleWeeklyLeaderboard(props) {
+  const icon = <img src="svg/leader.svg" alt="leader" width="50px" height="50px"/>;
+
   const latestWeekIndex = 0;
   const latestWeek = props.scoreData.weeklyScores[latestWeekIndex];
 
@@ -19,7 +22,7 @@ function WordleWeeklyLeaderboard(props) {
 
   return (
     <div style={{textAlign: "center"}}>
-      <h2>Week {props.scoreData.weeklyScores.length} Leaderboard</h2>
+      <h2>{icon} {year} Week {props.scoreData.weeklyScores.length} Leaderboard </h2>
       <table style={{width: "100%"}}>
         <tbody>
           <tr>
@@ -35,6 +38,8 @@ function WordleWeeklyLeaderboard(props) {
 // ========================================
 
 function WordleSeasonStandings(props) {
+  const icon = <img src="svg/standings.svg" alt="standings" width="50px" height="50px"/>;
+
   const seasonWins = [];
   for (let player in props.scoreData.seasonStandings) {
     const playerWins = props.scoreData.seasonStandings[player];
@@ -48,7 +53,7 @@ function WordleSeasonStandings(props) {
 
   return (
     <div style={{textAlign: "center"}}>
-      <h2>Season Standings</h2>
+      <h2>{icon} {year} Season Standings</h2>
       <table style={{width: "100%"}}>
         <tbody>
           <tr>
@@ -64,23 +69,31 @@ function WordleSeasonStandings(props) {
 // ========================================
 
 function WordleSeasonStats(props) {
-  const lowestWeeklyScoreEver = props.scoreData.seasonStats.lowestWeeklyScoreEver;
-  const lowest = (
-    <tr key={lowestWeeklyScoreEver.player}>
-      <td>{lowestWeeklyScoreEver.player}</td>
-      <td>{lowestWeeklyScoreEver.score}</td>
-      <td>{lowestWeeklyScoreEver.week}</td>
-    </tr>
-  )
+  const icon = <img src="svg/stats.svg" alt="stats" width="50px" height="50px"/>;
 
+  let lowest = <tr><td/><td/><td/></tr>
+  const lowestWeeklyScoreEver = props.scoreData.seasonStats.lowestWeeklyScoreEver;
+  if (lowestWeeklyScoreEver != null) {
+    lowest = (
+      <tr key={lowestWeeklyScoreEver.player}>
+        <td>{lowestWeeklyScoreEver.player}</td>
+        <td>{lowestWeeklyScoreEver.score}</td>
+        <td>{lowestWeeklyScoreEver.week}</td>
+      </tr>
+    )
+  }
+
+  let highest = <tr><td/><td/><td/></tr>
   const highestWeeklyScoreEver = props.scoreData.seasonStats.highestWeeklyScoreEver;
-  const highest = (
-    <tr key={highestWeeklyScoreEver.player}>
-      <td>{highestWeeklyScoreEver.player}</td>
-      <td>{highestWeeklyScoreEver.score}</td>
-      <td>{highestWeeklyScoreEver.week}</td>
-    </tr>
-  )
+  if (highestWeeklyScoreEver != null) {
+    highest = (
+      <tr key={highestWeeklyScoreEver.player}>
+        <td>{highestWeeklyScoreEver.player}</td>
+        <td>{highestWeeklyScoreEver.score}</td>
+        <td>{highestWeeklyScoreEver.week}</td>
+      </tr>
+    )
+  }
 
   const averageScores = [];
   for (let player in props.scoreData.seasonStats.averageWeeklyScores) {
@@ -95,7 +108,7 @@ function WordleSeasonStats(props) {
 
   return (
     <div style={{textAlign: "center"}}>
-      <h2>Season Stats</h2>
+      <h2>{icon} {year} Season Stats</h2>
       <table style={{width: "100%"}}>
         <tbody>
           <tr>
@@ -119,6 +132,28 @@ function WordleSeasonStats(props) {
             <th style={{width: "60%"}}>Player</th><th colSpan={2} style={{width: "40%"}}>Score</th>
           </tr>
           {averageScores}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+// ========================================
+
+function WordleSeasonChamps() {
+  const icon = <img src="svg/champ.svg" alt="champ" width="50px" height="50px"/>;
+
+  return (
+    <div style={{textAlign: "center"}}>
+      <h2>{icon} Season Champs</h2>
+      <table style={{width: "100%"}}>
+        <tbody>
+          <tr>
+            <th style={{width: "60%"}}>Player</th><th style={{width: "40%"}}>Year (Wins)</th>
+          </tr>
+          <tr>
+            <td style={{width: "60%"}}>sarah</td><td style={{width: "40%"}}>2024 (16.833)</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -192,6 +227,11 @@ class WordleHome extends React.Component {
             <br/>
 
             <WordleSeasonStats scoreData={this.state.scoreData} />
+
+            <br/>
+            <br/>
+
+            <WordleSeasonChamps />
 
           </main>
         </div>
