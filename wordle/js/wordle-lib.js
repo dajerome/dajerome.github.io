@@ -58,7 +58,7 @@ class WordleLib {
           };
         }
         else {
-          if (week[player] <= lowestWeeklyScoreEver.score) {
+          if (week[player] < lowestWeeklyScoreEver.score) {
             lowestWeeklyScoreEver = {
               player: player,
               score: week[player],
@@ -76,7 +76,7 @@ class WordleLib {
           };
         }
         else {
-          if (week[player] >= highestWeeklyScoreEver.score) {
+          if (week[player] > highestWeeklyScoreEver.score) {
             highestWeeklyScoreEver = {
               player: player,
               score: week[player],

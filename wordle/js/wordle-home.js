@@ -1,4 +1,4 @@
-const year = 2025;
+const year = 2026;
 const lib = new WordleLib();
 
 // ========================================
@@ -150,6 +150,9 @@ function WordleSeasonChamps() {
         <tbody>
           <tr>
             <th style={{width: "60%"}}>Player</th><th style={{width: "40%"}}>Year (Wins)</th>
+          </tr>
+          <tr>
+            <td style={{width: "60%"}}>sarah</td><td style={{width: "40%"}}>2025 (17.333)</td>
           </tr>
           <tr>
             <td style={{width: "60%"}}>sarah</td><td style={{width: "40%"}}>2024 (16.833)</td>
