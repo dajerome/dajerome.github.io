@@ -134,6 +134,8 @@ class JeopardyLib {
 
   getData = async (url) => {
     const response = await fetch(url);
-    return await response.json();
+    const text = await response.text();
+    const cleanText = text.replace("scores_jeopardy", "");
+    return JSON.parse(cleanText);
   }
 }
